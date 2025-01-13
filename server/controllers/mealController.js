@@ -1,5 +1,5 @@
 // controllers/mealController.js
-import Meal from '../models/Meal.js';
+import { Meal } from '../models/Meal.js';
 
 export const getMeals = async (req, res) => {
   try {

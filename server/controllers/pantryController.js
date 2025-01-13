@@ -1,5 +1,5 @@
 // controllers/pantryController.js
-import PantryStaff from '../models/PantryStaff.js';
+import { PantryStaff } from '../models/PantryStaff.js';
 
 export const getPantryStaff = async (req, res) => {
   try {

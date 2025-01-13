@@ -1,5 +1,5 @@
 // controllers/deliveryController.js
-import DeliveryStaff from '../models/DeliveryStaff.js';
+import { DeliveryStaff } from '../models/DeliveryStaff.js';
 
 export const getDeliveryStaff = async (req, res) => {
   try {

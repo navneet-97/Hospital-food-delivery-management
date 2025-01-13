@@ -1,13 +1,31 @@
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose';
 
+// const pantryStaffSchema = new mongoose.Schema({
+//   name: { type: String, required: true },
+//   email: { type: String, required: true, unique: true },
+//   password: { type: String, required: true },
+//   contactNumber: { type: String, required: true },
+//   location: String,
+//   status: { type: String, enum: ['active', 'inactive'], default: 'active' },
+//   currentAssignments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Meal' }]
+// }, { timestamps: true });
+
+// export default mongoose.model('PantryStaff', pantryStaffSchema);
+
+// models/PantryStaff.js
+import mongoose from "mongoose";
 const pantryStaffSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
-  password: { type: String, required: true },
-  contactNumber: { type: String, required: true },
-  location: String,
-  status: { type: String, enum: ['active', 'inactive'], default: 'active' },
-  currentAssignments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Meal' }]
-}, { timestamps: true });
+  currentAssignments: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Meal'
+  }],
+  status: { 
+    type: String, 
+    enum: ['active', 'inactive'],
+    default: 'active'
+  }
+});
 
-export default mongoose.model('PantryStaff', pantryStaffSchema);
+export const PantryStaff = mongoose.model('PantryStaff', pantryStaffSchema);

@@ -1,5 +1,5 @@
 // controllers/patientController.js
-import Patient from '../models/Patient.js';
+import { Patient } from '../models/Patient.js';
 
 export const getPatients = async (req, res) => {
   try {
